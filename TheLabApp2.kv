@@ -1,0 +1,495 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+
+<MainWindow>:
+    BoxLayoutExample:
+
+<SecondWindow>:
+    GridLayoutExample:
+
+<ThirdWindow>:
+    GridLayoutExample:
+
+<Box5>:
+    cols: 3
+
+    ToggleButton:
+        text:"TUESDAY"
+        font_name:"fonts/Roboto-Medium.ttf"
+        on_state: root.on_toggle_button_state(self)
+        size_hint: None, 1
+        width: "100dp"
+    TextInput:
+        id: prob_pct
+        hint_text: '#'
+        size_hint: (None,1)
+        width:"40dp"
+        height: "40dp"
+        pos: "100dp", "450dp"
+        multiline: False
+        line_width: 2
+        font_size: 50
+
+
+    Button:    
+        text:"Click Here"
+        on_press: root.on_button_click()   # how to call a function for a button
+        font_name: 'fonts/Calculator.ttf'
+              
+    Label:
+        text: root.my_text   #sets the label to a certain text
+        font_name: 'fonts/Calculator.ttf'
+        font_size: "80dp"
+       
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    BoxLayoutExample:
+    GridLayoutExample:
+
+<ScrollViewExample@ScrollView>:
+    GridLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+
+<GridLayoutExample@GridLayout>:
+
+    cols: 3
+    rows: 2
+    
+    Box1:
+    Box2:
+    Box3:
+    Box4:
+    Box5:
+    Box6:
+
+<BoxLayoutExample>:
+    orientation: "vertical"
+    Tab: 
+
+<Box1>:
+    orientation: "vertical"
+    width: "140dp"
+    Label:
+        text: "Enter a number from 1 to 50: "
+        bold: True
+        size: "100dp", "80dp"
+        pos: "100dp", "500dp"
+        color: 1, 0, 0, 1
+        font_name: 'fonts/TheLedDisplaySt.ttf'
+        font_size: 30
+    
+    MDTextFieldRect:
+        id: amount_num
+        size_hint: None, None
+        width: "40dp"
+        height: "30dp"
+        background_color: app.theme_cls.bg_normal
+        pos_hint: {"center_x": .5, "center_y": .7}
+        hint_text: "#"
+        multiline: False
+    
+    MDRaisedButton:
+        text: "Find # Times Played"
+        font_name: 'fonts/TheLedDisplaySt.ttf'
+        size: "100dp", "100dp"
+        pos_hint: {"center_x": .5, "center_y": .1}
+        on_release: root.on_amount_num()
+      
+    Label:
+        text: root.output1
+        color: 1, 0, 0, 1
+        size_hint_y: 0.3
+        font_name: 'fonts/Roboto-Bold.ttf'
+
+<Box2>:
+
+    seq1: seq1
+    seq2: seq2
+    seq3: seq3
+    seq4: seq4
+    seq5: seq5
+    seq6: seq6
+    seq7: seq7
+    seq8: seq8
+
+    orientation: "vertical"
+    Label:
+        text: "Enter sequence below:"
+        font_name: "fonts/AlienEncountersRegular.ttf"
+        bold: True
+        size: "100dp", "80dp"
+        pos: "100dp", "500dp"
+        color: 1, 0, 0, 1
+    BoxLayout:
+        orientation: "horizontal"
+        MDTextFieldRect:
+            id: seq1
+            size_hint: None, None
+            width: "30dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .7, "center_y": .7}
+            hint_text: "#"
+            multiline: False
+        MDTextFieldRect:
+            id: seq2
+            size_hint: None, None
+            width: "30dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .7, "center_y": .7}
+            hint_text: "#"
+            multiline: False
+        MDTextFieldRect:
+            id: seq3
+            size_hint: None, None
+            width: "30dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .7, "center_y": .7}
+            hint_text: "#"
+            multiline: False
+        MDTextFieldRect:
+            id: seq4
+            size_hint: None, None
+            width: "30dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .7, "center_y": .7}
+            hint_text: "#"
+            multiline: False
+        MDTextFieldRect:
+            id: seq5
+            size_hint: None, None
+            width: "30dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .7, "center_y": .7}
+            hint_text: "#"
+            multiline: False
+        MDTextFieldRect:
+            id: seq6
+            size_hint: None, None
+            width: "30dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .7, "center_y": .7}
+            hint_text: "#"
+            multiline: False
+        MDTextFieldRect:
+            id: seq7
+            size_hint: None, None
+            width: "30dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .7, "center_y": .7}
+            hint_text: "#"
+            multiline: False
+        MDTextFieldRect:
+            id: seq8
+            size_hint: None, None
+            width: "48dp"
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .5, "center_y": .7}
+            hint_text: "Bonus"
+            multiline: False
+    BoxLayout:
+        orientation: "horizontal"
+        MDRaisedButton:
+            text: "Generate"
+            font_name: "fonts/AlienEncountersRegular.ttf"
+            size: "80dp", "80dp"
+            pos: "100dp","400dp"
+            pos_hint: {"center_x": .2, "center_y": .5}
+            on_release: root.on_sequence_num1()
+        MDRaisedButton:
+            text: "Generate w Bonus"
+            font_name: "fonts/AlienEncountersRegular.ttf"
+            size: "80dp", "80dp"
+            pos: "600dp","400dp"
+            pos_hint: {"center_x": .8, "center_y": .5}
+            on_release: root.on_sequence_num()
+    Label:
+        text: root.count_seq1
+        color: 1, 0, 0, 1
+        font_name: "fonts/AlienEncountersRegular.ttf"
+
+
+<Box3>:
+    BoxLayout:
+        orientation: "vertical"
+        bold: True
+        size: "100dp", "80dp"
+        pos: "100dp", "500dp"
+        color: 1, 0, 0, 1
+        Label:
+            text: "  The All-Time\n Average Sequence"
+            color: 0, 1, 1, 1
+            font_name: 'fonts/triple_dot_digital-7.ttf'
+        Button:
+            text:"Results"
+            font_name: "fonts/jd_led3.ttf"
+            width: "90dp"
+            height: "90dp"
+            color: 0, 1, 1, 1
+            on_press: root.average_all()
+        Label:
+            id: "all_avg"
+            text: root.all_averages
+            color: 1, 0, 0, 1
+            font_name: 'fonts/Roboto-Bold.ttf'
+
+<Box4>:
+    BoxLayout:
+        orientation:"vertical"
+        Label:
+            text: "         N Most \nRecurring Numbers"
+            font_name: 'fonts/G7_Cube_5.ttf'
+        MDTextFieldRect:
+            id: recur_len
+            size_hint: None, None
+            width: "30dp"
+            height: "25dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {"center_x": .5, "center_y": .7}
+            hint_text: "#"
+
+        MDRaisedButton:
+            text: "Results"
+            font_name: 'fonts/G7_Cube_5.ttf'
+            size: "80dp", "80dp"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_release: root.all_common()
+        Label:
+            text: root.most_comm
+            font_name: 'fonts/Roboto-Bold.ttf'
+
+<Box6>:
+
+    prob1: prob1
+    prob2: prob2
+    prob3: prob3
+    prob4: prob4
+    prob5: prob5
+    prob6: prob6
+    prob7: prob7
+    
+    BoxLayout:
+        orientation:"vertical"
+       
+        Label: 
+            text: "Total Probability"
+            font_name: 'fonts/Pennstat.ttf'
+            color: 0, 1, 0, 1
+            size_hint_y: 0.1
+        
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+                orientation:"vertical"
+                
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max: 50
+                    on_value: root.on_slider_value1(self)
+                    size_hint_y: 0.7
+                Label:
+                    id: prob1
+                    text: root.slider1_lbl
+                    size_hint_y: 0.2
+
+                Label:
+                    text: root.slider1_prob
+                    size_hint_y: 0.1
+            BoxLayout:
+                orientation:"vertical"
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max: 50
+                    on_value: root.on_slider_value2(self)
+                    size_hint_y: 0.7
+                Label:
+                    id: prob2
+                    text: root.slider2_lbl  
+                    size_hint_y: 0.2
+                Label:
+                    text: root.slider2_prob
+                    size_hint_y: 0.1
+            BoxLayout:
+                orientation:"vertical"
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max: 50
+                    on_value: root.on_slider_value3(self)
+                    size_hint_y: 0.7
+                Label:
+                    id: prob3
+                    text: root.slider3_lbl
+                    size_hint_y: 0.2
+                Label:
+                    text: root.slider3_prob
+                    size_hint_y: 0.1
+            BoxLayout:
+                orientation:"vertical"
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max: 50
+                    on_value: root.on_slider_value4(self)
+                    size_hint_y: 0.7
+                Label:
+                    id: prob4
+                    text: root.slider4_lbl
+                    size_hint_y: 0.2
+                Label:
+                    text: root.slider4_prob
+                    size_hint_y: 0.1
+            BoxLayout:
+                orientation:"vertical"
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max: 50
+                    on_value: root.on_slider_value5(self)
+                    size_hint_y: 0.7
+                Label:
+                    id: prob5
+                    text: root.slider5_lbl
+                    size_hint_y: 0.2
+                Label:
+                    text: root.slider5_prob
+                    size_hint_y: 0.1
+            BoxLayout:
+                orientation:"vertical"
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max: 50
+                    on_value: root.on_slider_value6(self)
+                    size_hint_y: 0.7
+                Label:
+                    id: prob6
+                    text: root.slider6_lbl
+                    size_hint_y: 0.2
+                Label:
+                    text: root.slider6_prob
+                    size_hint_y: 0.1
+            BoxLayout:
+                orientation:"vertical"
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max: 50
+                    on_value: root.on_slider_value7(self)
+                    size_hint_y: 0.7
+                Label:
+                    id: prob7
+                    text: root.slider7_lbl
+                    size_hint_y: 0.2
+                Label:
+                    text: root.slider7_prob
+                    size_hint_y: 0.1
+        Label:
+            text: root.total_probability
+            color: 0, 1, 0, 1
+            size_hint_y: 0.1  
+
+<GraphLayout>:
+    BoxLayout:
+        orientation: 'horizontal'
+        id:grph_option
+        BoxLayout:
+            orientation:'vertical'
+            MDTextFieldRect:
+                id: x_value
+                size_hint: None, None
+                width: 600
+                height: "30dp"
+                background_color: app.theme_cls.bg_normal
+                pos_hint: {"center_x": .5, "center_y": 2}
+                hint_text: "X"
+            MDTextFieldRect:
+                id: y_value
+                size_hint: None, None
+                width: 600
+                height: "30dp"
+                background_color: app.theme_cls.bg_normal
+                pos_hint: {"center_x": .5, "center_y": .7}
+                hint_text: "Y"
+            MDRaisedButton:
+                text: "Generate the graph"
+                font_name:"fonts/Roboto-Medium.ttf"
+                pos_hint: {"center_x":.5, "center_y": .1}
+                on_release: root.gnrt_graph(); root.current = 'graph'
+        Screen:
+            name: 'graph'
+            BoxLayout:
+                id: bx
+                orientation:'vertical'
+                size_hint_y: .9
+                pos_hint: {'top':1}
+
+<HomePage>:
+    BoxLayout:
+        orientation:"vertical"
+        Image:
+            source: 'images/kivy_background.PNG'
+            allow_stretch: True
+            keep_ratio: False
+     
+            Label:
+                text: "Lotto Max Data"
+                font_name:"fonts/triple_dot_digital-7.ttf"
+                center_x: root.width / 2
+                center_y: root.height / 1.3
+                font_size: 90
+            Image:
+                source: 'images/lottologo.png'
+                center_x: root.width / 2
+                center_y: root.height / 2.5
+                size_hint_x: None
+                size_hint_y: None  # Setting to None to allow custom height
+                height: 500  # Custom height
+                width: 1000
+                allow_stretch: True
+            Label:
+                text: "Mini Data Analysis\n and Visualization"
+                font_name: 'fonts/G7_Cube_5.ttf'
+                center_x: root.width / 2
+                center_y: root.height /6
+            
+
+
+<Tab>: 
+    # creating the size 
+    # and the alignment of the tab  
+    size_hint: 1, 1
+    #pos_hint: {'center_x': .5, 'center_y': .5} 
+    do_default_tab: False
+  
+    # Create tab 1 
+    TabbedPanelItem: 
+        text: 'Home'
+        font_name:"fonts/MIB.ttf"
+        HomePage:
+     
+  
+    # Create 2nd tab 
+    TabbedPanelItem: 
+        text: 'Analysis'
+        font_name:"fonts/MIB.ttf"
+        GridLayoutExample:
+       
+    # Create 3rd tab 
+    TabbedPanelItem: 
+        text: 'Plots'
+        font_name:"fonts/MIB.ttf"
+        GraphLayout:
